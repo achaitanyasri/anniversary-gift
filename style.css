@@ -17,7 +17,7 @@ body {
 header.hero {
   position: relative;
   background: url('images/photo1.jpg') no-repeat center center/cover;
-  height:1000px;
+  height:50vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,7 +27,7 @@ header .overlay {
   background: rgba(0, 0, 0, 0.5);
   color: rgb(255, 255, 255);
   padding: 2rem;
-  font-size: 2rem ;
+  font-size: 2.5rem ;
   margin: 0rem;
   text-align: center;
 }
@@ -36,13 +36,16 @@ header h1 {
   font-size: 5rem;
 }
 
+header p{
+  font-size: 2.5rem;
+}
 
 .intro, .timeline, .message {
   padding: 2rem;
   text-align: center;
 }
 .message{
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .slideshow {
@@ -169,7 +172,7 @@ header h1 {
 
 .timeline-content h3 {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: var(--line-color);
   text-align: center;
@@ -190,7 +193,7 @@ header h1 {
 
 .timeline-desc {
   margin-top: 0.5rem;
-  font-size: 0.95rem;
+  font-size: 1.25rem;
   color: #555;
 }
 
@@ -209,7 +212,7 @@ header h1 {
   color: #1f2937;
 }
 .final-message p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #4b5563;
 }
 
@@ -218,6 +221,7 @@ header h1 {
   text-align: center;
   border: none;
   box-shadow: none;
+  font-size: 1.25rem;
 }
 
 .event {
@@ -236,4 +240,5 @@ footer {
   color: white;
   text-align: center;
   padding: 1rem;
+  font-size: 1rem;
 }
