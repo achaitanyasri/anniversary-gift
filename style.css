@@ -1,0 +1,236 @@
+:root {
+  --bg-main: #fdfdfd;
+  --line-color: #2b3a67;
+  --dot-color: #ffffff;
+  --dot-border: #2b3a67;
+  --card-bg: #f3f6fc;
+  --text-color: #1a1a1a;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #d2def6;
+  color: #333;
+}
+
+header.hero {
+  position: relative;
+  background: url('images/photo1.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .overlay {
+  background: rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
+  padding: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+.intro, .timeline, .message {
+  padding: 2rem;
+  text-align: center;
+}
+.message{
+  font-size: 1rem;
+}
+
+.slideshow {
+  position: relative;
+  height: 700px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.timeline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.timeline-section {
+  background-color: var(--bg-main);
+  padding: 3rem 1rem;
+  color: var(--text-color);
+}
+
+.timeline-section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  color: var(--line-color);
+}
+
+.timeline {
+  position: relative;
+  margin: auto;
+  padding-left: 30px;
+  max-width: 700px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--line-color);
+  z-index: 0;
+  border-radius: 2px;
+}
+
+.timeline-item:last-child::after {
+  display: none;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 60px;
+  width: 100%;
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 50.55%; /* aligns center on the 4px line */
+  top: 0;
+  width: 14px;
+  height: 14px;
+  background-color: var(--dot-color);
+  border: 3px solid var(--dot-border);
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 6px rgba(43, 58, 103, 0.4);
+  animation: pop-in 0.6s ease-out forwards;
+  opacity: 0;
+}
+  
+@keyframes pop-in {
+  0% {
+    transform: translateX(-50%) scale(0.3);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.timeline-content {
+  background: var(--card-bg);
+  margin-top: 20px;
+  width: 80%;
+  max-width: 500px;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.8s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  will-change: transform, opacity;
+  text-align: center;
+}
+
+.timeline-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-content:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--line-color);
+  text-align: center;
+}
+
+.timeline-content img {
+  display: block;
+  margin: 1rem auto 0;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease;
+}
+
+.timeline-content img:hover {
+  transform: scale(1.05);
+}
+
+.timeline-desc {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.final-message {
+  background-color: #e0e7ff;
+  padding: 1rem;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  margin: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.final-message h1 {
+  font-size: 3rem;
+  color: #1f2937;
+}
+.final-message p {
+  font-size: 1.2rem;
+  color: #4b5563;
+}
+
+
+.end-message {
+  text-align: center;
+  border: none;
+  box-shadow: none;
+}
+
+.event {
+  margin: 1rem;
+  width: 200px;
+}
+
+.event img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+footer {
+  background: #2b3a67;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
