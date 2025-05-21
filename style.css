@@ -17,7 +17,7 @@ body {
 header.hero {
   position: relative;
   background: url('images/photo1.jpg') no-repeat center center/cover;
-  height: 100vh;
+  height:1000px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,13 +26,16 @@ header.hero {
 header .overlay {
   background: rgba(0, 0, 0, 0.5);
   color: rgb(255, 255, 255);
-  padding: 1rem;
+  padding: 2rem;
+  font-size: 2rem ;
+  margin: 0rem;
   text-align: center;
 }
 
 header h1 {
-  font-size: 3rem;
+  font-size: 5rem;
 }
+
 
 .intro, .timeline, .message {
   padding: 2rem;
