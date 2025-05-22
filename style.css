@@ -249,25 +249,65 @@ footer {
   left: 0;
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(to right, #2b3a67, #a6c1ee);
-  z-index: 9999;
+  background: radial-gradient(circle at center, #1e1f36 0%, #141526 100%);
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+  animation: overlayFade 1.2s ease-out forwards;
+}
+
+/* Sparkling stars background effect (optional) */
+#start-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%; width: 100%;
+  opacity: 0.08;
+  z-index: 0;
+  pointer-events: none;
 }
 
 #start-btn {
-  padding: 1rem 2rem;
-  font-size: 2rem;
-  background-color: #c70c6a;
+  z-index: 1;
+  padding: 1.2rem 3rem;
+  font-size: 2.5rem;
+  font-family: 'Caveat', cursive;
+  background: linear-gradient(135deg, #ff4ec7, #ff95d6, #ffc1e3);
   border: none;
-  border-radius: 1rem;
+  border-radius: 3rem;
   color: white;
   cursor: pointer;
+  box-shadow: 0 0 25px rgba(255, 105, 180, 0.9), inset 0 0 10px rgba(255, 192, 203, 0.4);
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+  animation: popIn 1.5s ease-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 #start-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
+  box-shadow: 0 0 45px rgba(255, 20, 147, 1), inset 0 0 20px rgba(255, 255, 255, 0.5);
 }
+
+/* Animations */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes overlayFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
