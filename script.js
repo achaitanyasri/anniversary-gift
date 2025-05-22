@@ -1,5 +1,3 @@
-
-
 // Scroll animation for timeline content
 const timelineContents = document.querySelectorAll('.timeline-content');
 
@@ -21,8 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const overlay = document.getElementById('start-overlay');
   const startBtn = document.getElementById('start-btn');
   const slides = document.querySelectorAll('.slide');
-  const music = document.querySelector('audio');
+  const music = document.getElementById('anniversaryMusic'); // safer to use ID if possible
   let slideIndex = 0;
+  let slideshowInterval;
 
   function showSlide() {
     slides.forEach((slide, i) => {
@@ -34,12 +33,13 @@ document.addEventListener("DOMContentLoaded", function () {
     slideIndex = (slideIndex + 1) % slides.length;
   }
 
-  setInterval(showSlide, 3000);
-  showSlide();
-
+  // Start button event
   startBtn.addEventListener("click", function () {
-    overlay.style.display = "none"; // Hide the overlay
-    music.play(); // Start music
-    slideshowInterval = setInterval(startSlideshow, 3000); // Start slideshow
+    overlay.style.display = "none";     // Hide the start overlay
+    music.play().catch(err => {
+      console.log("Audio play blocked:", err);
+    });                                 // Start the music
+    showSlide();                        // Show the first slide immediately
+    slideshowInterval = setInterval(showSlide, 3000); // Start slideshow
   });
 });
