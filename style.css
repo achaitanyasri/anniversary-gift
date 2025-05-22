@@ -242,3 +242,32 @@ footer {
   padding: 1rem;
   font-size: 1rem;
 }
+
+#start-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to right, #2b3a67, #a6c1ee);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#start-btn {
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  background-color: #c70c6a;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+}
+
+#start-btn:hover {
+  transform: scale(1.1);
+}
