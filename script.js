@@ -30,3 +30,25 @@ function checkVisibility() {
 
 window.addEventListener('scroll', checkVisibility);
 window.addEventListener('load', checkVisibility);
+
+document.addEventListener("DOMContentLoaded", function () {
+  const overlay = document.getElementById('start-overlay');
+  const startBtn = document.getElementById('start-btn');
+  const slides = document.querySelectorAll('.slide');
+  const music = document.querySelector('audio');
+  let currentSlide = 0;
+
+  function startSlideshow() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  let slideshowInterval;
+
+  startBtn.addEventListener("click", function () {
+    overlay.style.display = "none"; // Hide the overlay
+    music.play(); // Start music
+    slideshowInterval = setInterval(startSlideshow, 3000); // Start slideshow
+  });
+});
